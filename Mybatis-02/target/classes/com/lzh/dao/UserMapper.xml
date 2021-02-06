@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+    <mapper namespace="com.lzh.dao.UserDao">
+
+    <select id="getUserList" resultType="com.lzh.pojo.User">
+    select * from mybatistwo.user
+  </select>
+
+    <select id="getUserLike" resultType="com.lzh.pojo.User">
+    select * from mybatistwo.user where name like "%"#{value}"%" ;
+  </select>
+
+<select id="getUserByLimit" parameterType="map" resultType="com.lzh.pojo.User">
+select * from mybatistwo.user limit #{startIndex},#{pageSize}
+
+</select>
+
+</mapper>
